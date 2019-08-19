@@ -1,4 +1,4 @@
-package com.ldx.bean;
+package com.ldx.bean.user;
 
 import com.github.pagehelper.Page;
 

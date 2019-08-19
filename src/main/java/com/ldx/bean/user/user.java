@@ -1,4 +1,4 @@
-package com.ldx.bean;
+package com.ldx.bean.user;
 
 
 import java.io.Serializable;

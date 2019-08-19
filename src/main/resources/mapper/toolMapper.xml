@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ldx.mapper.MyToolMapper">
+    <!-- 用用查询映射结果 -->
+    <resultMap id="BaseToolMap" type="com.ldx.bean.tool.tool">
+        <!-- column代表数据库列名，property代表实体类属性名 -->
+        <result column="id" property="id"/>
+        <result column="text" property="text"/>
+        <result column="canSkip" property="canSkip"/>
+        <result column="skipPath" property="skipPath"/>
+        <result column="skipType" property="skipType"/>
+        <result column="subText" property="subText"/>
+        <result column="urlPath" property="urlPath"/>
+    </resultMap>
+
+
+    <!-- 查询名字记录sql -->
+    <select id="selectAllToolData" resultType="map">
+        SELECT * FROM tool
+    </select>
+
+</mapper>

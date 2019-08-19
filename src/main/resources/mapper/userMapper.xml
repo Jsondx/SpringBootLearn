@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ldx.mapper.MyUserMapper">
     <!-- 用用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.ldx.bean.user">
+    <resultMap id="BaseResultMap" type="com.ldx.bean.user.user">
         <!-- column代表数据库列名，property代表实体类属性名 -->
         <result column="userName" property="userName"/>
         <result column="age" property="age"/>

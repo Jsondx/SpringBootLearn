@@ -1,7 +1,7 @@
 package com.ldx.mapper;
 
 import com.github.pagehelper.Page;
-import com.ldx.bean.user;
+import com.ldx.bean.user.user;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Map;

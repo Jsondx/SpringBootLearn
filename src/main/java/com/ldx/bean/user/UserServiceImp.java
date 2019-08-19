@@ -1,4 +1,4 @@
-package com.ldx.bean;
+package com.ldx.bean.user;
 
 import com.github.pagehelper.Page;
 import com.ldx.mapper.MyUserMapper;
@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @Service
-public class UserServiceImp implements UserService  {
+public class UserServiceImp implements UserService {
 
     @Autowired
     private MyUserMapper user;//注入UserDao
 
     @Override
-    public com.ldx.bean.user selectAllUserData() {
+    public user selectAllUserData() {
         return user.selectAllUserData();
     }
 
