@@ -9,6 +9,7 @@ import com.ldx.utils.PageToJsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -42,6 +43,13 @@ class HelloController {
         message = "{\"menuList\":" + JSON.toJSONString(objects) + "}";
         //通过拼接转成json 在前台展示
         return message;
+    }
+
+    //post 请求方式 (如果是get 405error)
+    @RequestMapping(value = "/api/v1/create_info", method = RequestMethod.POST)
+    public String handlePostRequest(@RequestParam("sysname") String sysname, @RequestParam("timestamp") String timestamp,
+                                    @RequestParam("data") String data, @RequestParam("token") String token) {
+        return "sysname: " + sysname + "   " + "timestamp: " + timestamp + "   " + "data: " + data + "   " + "token: " + token + "   ";
     }
 
 }
