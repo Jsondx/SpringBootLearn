@@ -20,15 +20,18 @@ class HelloController {
     private UserService userService;//注入Service
 
     @ResponseBody
-    @RequestMapping("/hello")
+    @RequestMapping("/userMessage")
     public String hello() {
         List<Object> jsonList = new ArrayList<Object>();
         String message = "";
+        //用page 用来加载所有数据库数据的
         Page<Map<String, Object>> mapPage = userService.selectUserByName();
         List<Map<String, Object>> result = mapPage.getResult();
         for (Map<String, Object> stringObjectMap : result) {
+            //通过fastjson 转成object 没有转义符。
             jsonList.add(JSON.toJSON(stringObjectMap));
         }
+        //通过拼接转成json 在前台展示
         message = "{\"menuList\":" + JSON.toJSONString(jsonList) + "}";
         return message;
     }
